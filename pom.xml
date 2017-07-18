@@ -68,6 +68,14 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>org.yaml.snakeyaml.</pattern>
+                            <shadedPattern>org.diorite.libs.</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
             </plugin>
 
             <plugin>
