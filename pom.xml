@@ -7,7 +7,7 @@
     <name>ProtocolTab</name>
     <groupId>pl.kacperduras</groupId>
     <artifactId>protocoltab</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <repositories>
         <repository>
@@ -68,6 +68,14 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>org.yaml.snakeyaml.</pattern>
+                            <shadedPattern>org.diorite.libs.</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
             </plugin>
 
             <plugin>
