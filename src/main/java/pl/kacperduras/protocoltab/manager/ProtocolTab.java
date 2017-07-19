@@ -154,7 +154,9 @@ public class ProtocolTab {
         Validate.isTrue(player != null, "Player cannot be null!");
         Validate.isTrue(player.isOnline(), "Player cannot be offline!");
 
-        for(int i = 0; i<80; i++) this.setSlot(i, this.BLANK_TEXT);
+        for(int i = 0; i<80; i++){
+            this.setSlot(i, this.BLANK_TEXT);
+        }
     }
     private String getSlotName(int index) {
         if (index < 20) {
