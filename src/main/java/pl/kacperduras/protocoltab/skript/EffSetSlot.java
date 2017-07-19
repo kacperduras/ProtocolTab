@@ -27,7 +27,7 @@ import pl.kacperduras.protocoltab.ProtocolTabAPI;
 public class EffSetSlot extends Effect {
 
     static {
-        Skript.registerEffect(EffSetSlot.class, "set %player%'s slot number %number% to %string%");
+        Skript.registerEffect(EffSetSlot.class, "set %player%'s slot number %integer% to %string%");
     }
 
     private Expression<Player> playerExpression;

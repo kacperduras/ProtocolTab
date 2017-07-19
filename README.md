@@ -4,6 +4,8 @@ ProtocolTab is a small, easy and fast in use api for managing tab list on your M
  Each player can see different tab list, and everything is limited to your imagination.
 
 ## Example
+
+### Java
 ```java
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -57,6 +59,16 @@ public final class ProtocolTabExample extends JavaPlugin {
 
 }
 ```
+
+### Skript
+```
+set %player%'s header to %string%
+set %player%'s footer to %string%
+set %player%'s slot number %integer% to %string%
+update %player%'s tablist
+```
+
+The usage is similar to the Java API.
 
 ## Configuration
 ```yaml
