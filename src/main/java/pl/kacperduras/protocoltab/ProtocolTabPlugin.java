@@ -15,11 +15,13 @@
 */
 package pl.kacperduras.protocoltab;
 
+import ch.njol.skript.Skript;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.diorite.config.ConfigManager;
 import pl.kacperduras.protocoltab.manager.ProtocolTabManager;
 
 import java.io.File;
+import java.io.IOException;
 
 public final class ProtocolTabPlugin extends JavaPlugin {
 
@@ -45,11 +47,19 @@ public final class ProtocolTabPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         this.manager = new ProtocolTabManager(this.config);
+
+        // Skript hook
+        if (this.getServer().getPluginManager().getPlugin("Skript") != null && Skript.isAcceptRegistrations()) {
+            try {
+                Skript.getAddon(this).loadClasses("pl.kacperduras.protocoltab", "skript");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     @Override
     public void onDisable() {
-
     }
 
     protected static ProtocolTabPlugin getInstance() {
