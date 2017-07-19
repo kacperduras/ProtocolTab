@@ -7,7 +7,7 @@
     <name>ProtocolTab</name>
     <groupId>pl.kacperduras</groupId>
     <artifactId>protocoltab</artifactId>
-    <version>1.0.2-dev1</version>
+    <version>1.0.2</version>
 
     <repositories>
         <repository>
