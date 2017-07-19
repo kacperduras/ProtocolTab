@@ -126,7 +126,6 @@ public class ProtocolTab {
 
         this.ping = ping;
     }
-
     public void setHeader(String header) {
         Validate.isTrue(header != null, "Header can not be null!");
 
@@ -151,6 +150,14 @@ public class ProtocolTab {
         this.setFooter(BaseComponent.toLegacyText(component));
     }
 
+    public void clear(Player player){
+        Validate.isTrue(player != null, "Player cannot be null!");
+        Validate.isTrue(player.isOnline(), "Player cannot be offline!");
+
+        for(int i = 0; i<80; i++){
+            this.setSlot(i, this.BLANK_TEXT);
+        }
+    }
     private String getSlotName(int index) {
         if (index < 20) {
             return "A-" + ALPHABET[index];
