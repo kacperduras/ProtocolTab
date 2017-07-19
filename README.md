@@ -31,7 +31,7 @@ public final class ProtocolTabExample extends JavaPlugin {
                 Player player = event.getPlayer();
 
                 for (int i = 0; i < 80; i++) {
-                    ProtocolTabAPI.getTablist(player).setSlot(0, ProtocolTab.BLANK_TEXT);
+                    ProtocolTabAPI.getTablist(player).setSlot(i, ProtocolTab.BLANK_TEXT);
                 }
 
                 ProtocolTabAPI.getTablist(player).setHeader("&cmd_5 is love!");
