@@ -28,9 +28,7 @@ import pl.kacperduras.protocoltab.ProtocolTabConfig;
 import pl.kacperduras.protocoltab.packet.PlayerInfoHeaderFooterPacket;
 import pl.kacperduras.protocoltab.packet.PlayerInfoPacket;
 
-import java.util.Collections;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ProtocolTab {
@@ -58,17 +56,23 @@ public class ProtocolTab {
         Validate.isTrue(player != null, "Player can not be null!");
         Validate.isTrue(player.isOnline(), "Player can not be offline!");
 
+        // tab list slots
+        PlayerInfoPacket infoPacket = new PlayerInfoPacket();
+        infoPacket.setAction(EnumWrappers.PlayerInfoAction.ADD_PLAYER);
+
+        List<PlayerInfoData> infoData = new ArrayList<>();
         for (Map.Entry<Integer, ProtocolSlot> entry : this.slots.entrySet()) {
-            PlayerInfoPacket packet = new PlayerInfoPacket();
-            packet.setAction(EnumWrappers.PlayerInfoAction.ADD_PLAYER);
-            packet.setData(Collections.singletonList(
+            infoData.add(
                     new PlayerInfoData(entry.getValue().getProfile(), ping, EnumWrappers.NativeGameMode.NOT_SET,
                                               WrappedChatComponent.fromText(ChatColor.translateAlternateColorCodes(
-                                                      '&', entry.getValue().getText())))));
-
-            packet.sendPacket(player);
+                                                      '&', entry.getValue().getText())))
+            );
         }
 
+        infoPacket.setData(infoData);
+        infoPacket.sendPacket(player);
+
+        // header and footer
         PlayerInfoHeaderFooterPacket packet = new PlayerInfoHeaderFooterPacket();
         if (this.header == null) {
             this.header = "";
