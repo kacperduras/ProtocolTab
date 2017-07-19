@@ -27,7 +27,7 @@ import pl.kacperduras.protocoltab.ProtocolTabAPI;
 public class EffSetSlot extends Effect {
 
     static {
-        Skript.registerEffect(EffSetSlot.class, "set %player%'s slot number %integer% to %string%");
+        Skript.registerEffect(EffSetSlot.class, "set %player%'s slot number %number% to %string%");
     }
 
     private Expression<Player> playerExpression;
@@ -40,7 +40,7 @@ public class EffSetSlot extends Effect {
         Integer integer = this.integerExpression.getSingle(event);
         String string = this.stringExpression.getSingle(event);
 
-        if (player == null || string == null) {
+        if (player == null || string == null || integer == null) {
             return;
         }
 

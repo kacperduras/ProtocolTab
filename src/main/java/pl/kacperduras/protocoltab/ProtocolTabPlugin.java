@@ -51,7 +51,7 @@ public final class ProtocolTabPlugin extends JavaPlugin {
         // Skript hook
         if (this.getServer().getPluginManager().getPlugin("Skript") != null && Skript.isAcceptRegistrations()) {
             try {
-                Skript.getAddon(this).loadClasses("pl.kacperduras.protocoltab", "skript");
+                Skript.registerAddon(this).loadClasses("pl.kacperduras.protocoltab", "skript");
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
