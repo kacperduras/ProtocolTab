@@ -81,7 +81,14 @@ public final class ProtocolTabManager {
 
         @Override
         public void onRemoval(RemovalNotification<UUID, ProtocolTab> notification) {
-            this.manager.tabMap.put(notification.getKey(), notification.getValue());
+            UUID key = notification.getKey();
+            ProtocolTab value = notification.getValue();
+
+            if (key == null || value == null) {
+                return;
+            }
+
+            this.manager.tabMap.put(key, value);
         }
 
     }
