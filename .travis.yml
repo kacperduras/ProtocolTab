@@ -11,3 +11,6 @@ script:
 - sudo wget https://github.com/bensku/Skript/releases/download/dev29/Skript.jar --output-document $TRAVIS_BUILD_DIR/lib/Skript.jar
 - mvn validate
 - mvn clean test
+
+notifications:
+  email: false
