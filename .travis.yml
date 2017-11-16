@@ -1,16 +1,19 @@
 language: java
 sudo: required
-jdk:
-- oraclejdk8
-install: true
-script:
-- sudo apt-get update && sudo apt-get install oracle-java8-installer
-- sudo apt install oracle-java8-set-default
-- java -version
-- sudo mkdir -p $TRAVIS_BUILD_DIR/lib/
-- sudo wget https://github.com/bensku/Skript/releases/download/dev29/Skript.jar --output-document $TRAVIS_BUILD_DIR/lib/Skript.jar
-- mvn validate
-- mvn clean test
+
+before_install:
+  - sudo mkdir -p $TRAVIS_BUILD_DIR/lib/
+  - sudo wget https://github.com/bensku/Skript/releases/download/dev32b/Skript.jar --output-document $TRAVIS_BUILD_DIR/lib/Skript.jar
+
+addons:
+  apt:
+    packages:
+      - oracle-java9-installer
+
+matrix:
+  include:
+    - jdk: oraclejdk8
+    - jdk: oraclejdk9
 
 notifications:
   email: false
