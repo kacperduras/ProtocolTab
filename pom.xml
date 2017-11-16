@@ -9,6 +9,13 @@
     <artifactId>protocoltab</artifactId>
     <version>1.1.2</version>
 
+    <distributionManagement>
+        <repository>
+            <id>kacperduras-repo</id>
+            <url>https://repo.kacperduras.pl/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>spigot-repo</id>
@@ -19,8 +26,8 @@
             <url>http://repo.dmulloy2.net/nexus/repository/public/</url>
         </repository>
         <repository>
-            <id>diorite-repo</id>
-            <url>https://repo.diorite.org/repository/diorite/</url>
+            <id>kacperduras-repo</id>
+            <url>https://repo.kacperduras.pl/content/repositories/releases/</url>
         </repository>
     </repositories>
 
