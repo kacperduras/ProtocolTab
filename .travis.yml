@@ -8,7 +8,7 @@ script:
 - sudo apt install oracle-java8-set-default
 - java -version
 - sudo mkdir -p $TRAVIS_BUILD_DIR/lib/
-- sudo wget https://github.com/bensku/Skript/releases/download/dev29/Skript.jar --output-document $TRAVIS_BUILD_DIR/lib/Skript.jar
+- sudo wget https://github.com/bensku/Skript/releases/download/dev32b/Skript.jar --output-document $TRAVIS_BUILD_DIR/lib/Skript.jar
 - mvn validate
 - mvn clean test
 
