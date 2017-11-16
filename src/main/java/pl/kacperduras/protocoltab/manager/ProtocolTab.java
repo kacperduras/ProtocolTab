@@ -53,8 +53,9 @@ public class ProtocolTab {
     }
 
     public void update(Player player) {
-        Validate.isTrue(player != null, "Player can not be null!");
-        Validate.isTrue(player.isOnline(), "Player can not be offline!");
+        if (player == null || !player.isOnline()) {
+            return;
+        }
 
         // tab list slots
         PlayerInfoPacket infoPacket = new PlayerInfoPacket();
@@ -89,7 +90,12 @@ public class ProtocolTab {
     }
 
     public void update() {
-        this.update(Bukkit.getPlayer(this.uuid));
+        Player player = Bukkit.getPlayer(this.uuid);
+        if (player == null) {
+            return;
+        }
+
+        this.update(player);
     }
 
     public ProtocolSlot getSlot(int index) {
