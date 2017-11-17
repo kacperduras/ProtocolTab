@@ -13,7 +13,7 @@ ProtocolTab is a small, easy and fast in use api for managing tab list on your M
 <dependency>
     <groupId>pl.kacperduras</groupId>
     <artifactId>protocoltab</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.3</version>
     <scope>provided</scope>
 </dependency>
 ```
