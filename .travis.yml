@@ -5,15 +5,14 @@ before_install:
   - sudo mkdir -p $TRAVIS_BUILD_DIR/lib/
   - sudo wget https://github.com/bensku/Skript/releases/download/dev32b/Skript.jar --output-document $TRAVIS_BUILD_DIR/lib/Skript.jar
 
-addons:
-  apt:
-    packages:
-      - oracle-java9-installer
-
 matrix:
   include:
     - jdk: oraclejdk8
     - jdk: oraclejdk9
+      addons:
+        apt:
+          packages:
+            - oracle-java9-installer
 
 notifications:
   email: false
