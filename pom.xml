@@ -26,8 +26,8 @@
             <url>http://repo.dmulloy2.net/nexus/repository/public/</url>
         </repository>
         <repository>
-            <id>kacperduras-repo</id>
-            <url>https://repo.kacperduras.pl/content/repositories/releases/</url>
+            <id>panda-repo</id>
+            <url>https://repo.panda-lang.org/</url>
         </repository>
     </repositories>
 
