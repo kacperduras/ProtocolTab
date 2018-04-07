@@ -66,9 +66,14 @@ public final class ProtocolTabExample extends JavaPlugin {
 
     private void runTask(Player player) {
         this.getServer().getScheduler().runTaskTimerAsynchronously(this, () -> {
-            ProtocolTabAPI.getTablist(player).setSlot(3, "&a" + dateFormat.get().format(
-                    new Date(System.currentTimeMillis())));
-            ProtocolTabAPI.getTablist(player).update();
+          if (player == null || player.isOnline()) {
+            // do something
+            return;
+          }
+          
+          ProtocolTabAPI.getTablist(player).setSlot(3, "&a" + dateFormat.get().format(
+              new Date(System.currentTimeMillis())));
+          ProtocolTabAPI.getTablist(player).update();
         }, 20L, 20L);
     }
 
