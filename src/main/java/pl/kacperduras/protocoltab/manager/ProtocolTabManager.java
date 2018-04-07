@@ -43,13 +43,13 @@ public final class ProtocolTabManager {
     }
 
     public ProtocolTab getTablist(Player player) {
-        Validate.isTrue(player != null, "Player can not be null!");
+        Validate.isTrue(player != null, "Player cannot be null!");
 
         return this.getTablist(player.getUniqueId());
     }
 
     public ProtocolTab getTablist(UUID uuid) {
-        Validate.isTrue(uuid != null, "UUID can not be null!");
+        Validate.isTrue(uuid != null, "UUID cannot be null!");
 
         ProtocolTab tablist = this.tabCache.getIfPresent(uuid);
         if (tablist == null) {
@@ -71,7 +71,7 @@ public final class ProtocolTabManager {
         private final ProtocolTabManager manager;
 
         public ProtocolTabRemovalListener(ProtocolTabManager manager) {
-            Validate.isTrue(manager != null, "Manager can not be null!");
+            Validate.isTrue(manager != null, "Manager cannot be null!");
 
             this.manager = manager;
         }

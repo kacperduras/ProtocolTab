@@ -44,7 +44,7 @@ public class ProtocolTab {
     private String footer;
 
     public ProtocolTab(UUID uuid, int ping) {
-        Validate.isTrue(uuid != null, "UUID can not be null!");
+        Validate.isTrue(uuid != null, "UUID cannot be null!");
 
         this.uuid = uuid;
         this.ping = ping;
@@ -114,7 +114,7 @@ public class ProtocolTab {
     }
 
     public void setSlot(int index, String text) {
-        Validate.isTrue(text != null, "Text can not be null!");
+        Validate.isTrue(text != null, "Text cannot be null!");
 
         this.getSlot(index).setText(text);
     }
@@ -126,31 +126,31 @@ public class ProtocolTab {
     }
 
     public void setPing(int ping) {
-        Validate.isTrue(ping < 0, "Ping can not be null!");
+        Validate.isTrue(ping < 0, "Ping cannot be null!");
 
         this.ping = ping;
     }
 
     public void setHeader(String header) {
-        Validate.isTrue(header != null, "Header can not be null!");
+        Validate.isTrue(header != null, "Header cannot be null!");
 
         this.header = header;
     }
 
     public void setFooter(String footer) {
-        Validate.isTrue(footer != null, "Footer can not be null!");
+        Validate.isTrue(footer != null, "Footer cannot be null!");
 
         this.footer = footer;
     }
 
     public void setHeader(BaseComponent... component) {
-        Validate.isTrue(component != null, "Component can not be null!");
+        Validate.isTrue(component != null, "Component cannot be null!");
 
         this.setFooter(BaseComponent.toLegacyText(component));
     }
 
     public void setFooter(BaseComponent... component) {
-        Validate.isTrue(component != null, "Component can not be null!");
+        Validate.isTrue(component != null, "Component cannot be null!");
 
         this.setFooter(BaseComponent.toLegacyText(component));
     }

@@ -41,13 +41,13 @@ public class PlayerInfoHeaderFooterPacket extends Packet {
     }
 
     public void setHeader(WrappedChatComponent value) {
-        Validate.isTrue(value != null, "Value can not be null!");
+        Validate.isTrue(value != null, "Value cannot be null!");
 
         this.getHandle().getChatComponents().write(0, value);
     }
 
     public void setFooter(WrappedChatComponent value) {
-        Validate.isTrue(value != null, "Value can not be null!");
+        Validate.isTrue(value != null, "Value cannot be null!");
 
         this.getHandle().getChatComponents().write(1, value);
     }

@@ -26,8 +26,8 @@ public class ProtocolSlot {
     private String text;
 
     public ProtocolSlot(WrappedGameProfile profile, String text) {
-        Validate.isTrue(profile != null, "Profile can not be null!");
-        Validate.isTrue(text != null, "Text can not be null!");
+        Validate.isTrue(profile != null, "Profile cannot be null!");
+        Validate.isTrue(text != null, "Text cannot be null!");
 
         this.profile = profile;
         this.text = text;
@@ -42,13 +42,13 @@ public class ProtocolSlot {
     }
 
     public void setText(String text) {
-        Validate.isTrue(text != null, "Text can not be null!");
+        Validate.isTrue(text != null, "Text cannot be null!");
 
         this.text = text;
     }
 
     public void setText(BaseComponent... component) {
-        Validate.isTrue(component != null, "Component can not be null!");
+        Validate.isTrue(component != null, "Component cannot be null!");
 
         this.setText(BaseComponent.toLegacyText(component));
     }

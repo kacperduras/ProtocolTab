@@ -28,7 +28,7 @@ public abstract class Packet {
     private final PacketContainer handle;
 
     protected Packet(PacketContainer handle, PacketType type) {
-        Validate.isTrue(handle != null, "Packet handle can not be null!");
+        Validate.isTrue(handle != null, "Packet handle cannot be null!");
         Validate.isTrue(handle.getType().equals(type), handle.getHandle() + " is not a packet of type "
                                                                + type + "!");
 
@@ -37,8 +37,8 @@ public abstract class Packet {
     }
 
     public void sendPacket(Player receiver) {
-        Validate.isTrue(receiver != null, "Receiver can not be null!");
-        Validate.isTrue(receiver.isOnline(), "Receiver can not be offline!");
+        Validate.isTrue(receiver != null, "Receiver cannot be null!");
+        Validate.isTrue(receiver.isOnline(), "Receiver cannot be offline!");
 
         try {
             ProtocolLibrary.getProtocolManager().sendServerPacket(receiver, this.handle);
@@ -48,8 +48,8 @@ public abstract class Packet {
     }
 
     public void receivePacket(Player sender) {
-        Validate.isTrue(sender != null, "Sender can not be null!");
-        Validate.isTrue(sender.isOnline(), "Sender can not be offline!");
+        Validate.isTrue(sender != null, "Sender cannot be null!");
+        Validate.isTrue(sender.isOnline(), "Sender cannot be offline!");
 
         try {
             ProtocolLibrary.getProtocolManager().recieveClientPacket(sender, this.handle);

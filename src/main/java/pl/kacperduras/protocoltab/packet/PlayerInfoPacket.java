@@ -44,13 +44,13 @@ public class PlayerInfoPacket extends Packet {
     }
 
     public void setAction(EnumWrappers.PlayerInfoAction value) {
-        Validate.isTrue(value != null, "Value can not be null!");
+        Validate.isTrue(value != null, "Value cannot be null!");
 
         this.getHandle().getPlayerInfoAction().write(0, value);
     }
 
     public void setData(List<PlayerInfoData> value) {
-        Validate.isTrue(value != null, "Value can not be null!");
+        Validate.isTrue(value != null, "Value cannot be null!");
 
         this.getHandle().getPlayerInfoDataLists().write(0, value);
     }
