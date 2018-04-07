@@ -100,8 +100,8 @@ default-ping: '0'
 
 ## Requirements
 * [**ProtocolLib**](https://www.spigotmc.org/resources/protocollib.1997/) for 1.8+ versions;
-* Java 8.
+* Java 8+
 
 ## Download
-Stable releases: [here](https://github.com/kacperduras/ProtocolTab/releases)
+Stable releases: [here](https://github.com/kacperduras/ProtocolTab/releases)  
 Development releases: [here](https://ci.kacperduras.pl/job/ProtocolTab/)
