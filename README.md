@@ -103,4 +103,5 @@ default-ping: '0'
 * Java 8.
 
 ## Download
-Download is available [**here**](https://github.com/kacperduras/ProtocolTab/releases/).
+Stable releases: [here](https://github.com/kacperduras/ProtocolTab/releases)
+Development releases: [here](https://ci.kacperduras.pl/job/ProtocolTab/)
