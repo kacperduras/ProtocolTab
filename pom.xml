@@ -44,10 +44,10 @@
             <version>4.3.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+        <dependency> <!-- https://ci.kacperduras.pl/job/Skript/ -->
             <groupId>ch.njol</groupId>
             <artifactId>skript</artifactId>
-            <version>2.2-dev32c</version>
+            <version>JENKINS-BUILD</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/Skript.jar</systemPath>
         </dependency>
