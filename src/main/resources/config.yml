@@ -1,0 +1,4 @@
+# ProtocolTab basic configuration.
+
+# Default ping on board.
+default-ping: '0'

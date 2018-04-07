@@ -17,36 +17,26 @@ package pl.kacperduras.protocoltab;
 
 import ch.njol.skript.Skript;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.diorite.config.ConfigManager;
 import pl.kacperduras.protocoltab.manager.ProtocolTabManager;
 
-import java.io.File;
 import java.io.IOException;
 
 public final class ProtocolTabPlugin extends JavaPlugin {
 
     private static ProtocolTabPlugin instance;
 
-    private ProtocolTabConfig config;
     private ProtocolTabManager manager;
 
     @Override
     public void onLoad() {
-        File file = new File(this.getDataFolder(), "config.yml");
-        boolean exists = file.exists();
+        this.saveDefaultConfig();
 
-        this.config = ConfigManager.createInstance(ProtocolTabConfig.class);
-        this.config.bindFile(file);
-        if (!exists) {
-            this.config.save();
-        }
-        this.config.load();
         instance = this;
     }
 
     @Override
     public void onEnable() {
-        this.manager = new ProtocolTabManager(this.config);
+        this.manager = new ProtocolTabManager(this.getConfig().getInt("default-ping", 0));
 
         // Skript hook
         if (this.getServer().getPluginManager().getPlugin("Skript") != null && Skript.isAcceptRegistrations()) {

@@ -18,7 +18,7 @@ package pl.kacperduras.protocoltab.packet;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
-import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang.Validate;
 
 public class PlayerInfoHeaderFooterPacket extends Packet {
 

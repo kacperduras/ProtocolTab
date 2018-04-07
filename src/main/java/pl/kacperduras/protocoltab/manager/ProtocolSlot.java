@@ -17,7 +17,7 @@ package pl.kacperduras.protocoltab.manager;
 
 import com.comphenix.protocol.wrappers.WrappedGameProfile;
 import net.md_5.bungee.api.chat.BaseComponent;
-import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang.Validate;
 
 public class ProtocolSlot {
 

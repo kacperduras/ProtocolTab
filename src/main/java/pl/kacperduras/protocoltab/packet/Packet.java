@@ -18,7 +18,7 @@ package pl.kacperduras.protocoltab.packet;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
-import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.InvocationTargetException;

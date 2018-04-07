@@ -19,9 +19,8 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
-import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
-import pl.kacperduras.protocoltab.ProtocolTabConfig;
 
 import java.util.Map;
 import java.util.UUID;
@@ -37,12 +36,10 @@ public final class ProtocolTabManager {
                                                                 .softValues()
                                                                 .build();
 
-    private final ProtocolTabConfig config;
+    private final int ping;
 
-    public ProtocolTabManager(ProtocolTabConfig config) {
-        Validate.isTrue(config != null, "Config can not be null!");
-
-        this.config = config;
+    public ProtocolTabManager(int ping) {
+        this.ping = ping;
     }
 
     public ProtocolTab getTablist(Player player) {
@@ -62,7 +59,7 @@ public final class ProtocolTabManager {
                 tabMap.remove(uuid);
             }
 
-            tablist = new ProtocolTab(uuid, this.config);
+            tablist = new ProtocolTab(uuid, this.ping);
             tabCache.put(uuid, tablist);
         }
 

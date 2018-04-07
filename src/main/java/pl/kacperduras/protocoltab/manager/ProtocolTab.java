@@ -20,11 +20,10 @@ import com.comphenix.protocol.wrappers.PlayerInfoData;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import com.comphenix.protocol.wrappers.WrappedGameProfile;
 import net.md_5.bungee.api.chat.BaseComponent;
-import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import pl.kacperduras.protocoltab.ProtocolTabConfig;
 import pl.kacperduras.protocoltab.packet.PlayerInfoHeaderFooterPacket;
 import pl.kacperduras.protocoltab.packet.PlayerInfoPacket;
 
@@ -44,12 +43,11 @@ public class ProtocolTab {
     private String header;
     private String footer;
 
-    public ProtocolTab(UUID uuid, ProtocolTabConfig config) {
+    public ProtocolTab(UUID uuid, int ping) {
         Validate.isTrue(uuid != null, "UUID can not be null!");
-        Validate.isTrue(config != null, "Config can not be null!");
 
         this.uuid = uuid;
-        this.ping = config.getPing();
+        this.ping = ping;
     }
 
     public void update(Player player) {
