@@ -9,13 +9,6 @@
     <artifactId>protocoltab</artifactId>
     <version>1.2.0-SNAPSHOT</version>
 
-    <distributionManagement>
-        <repository>
-            <id>kacperduras-repo</id>
-            <url>https://repo.kacperduras.pl/content/repositories/releases/</url>
-        </repository>
-    </distributionManagement>
-
     <repositories>
         <repository>
             <id>spigot-repo</id>
@@ -82,14 +75,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <relocations>
-                        <relocation>
-                            <pattern>org.yaml.snakeyaml.</pattern>
-                            <shadedPattern>org.diorite.libs.</shadedPattern>
-                        </relocation>
-                    </relocations>
-                </configuration>
             </plugin>
 
             <plugin>

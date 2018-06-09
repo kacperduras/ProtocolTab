@@ -1,22 +1,7 @@
 # ProtocolTab [![Build Status](https://travis-ci.org/kacperduras/ProtocolTab.svg?branch=master)](https://travis-ci.org/kacperduras/ProtocolTab)
 
 ProtocolTab is a small, easy and fast in use api for managing tab list on your Minecraft server.
- Each player can see different tab list, and everything is limited to your imagination.
-
-## Maven
-```xml
-<repository>
-    <id>kacperduras-repo</id>
-    <url>https://repo.kacperduras.pl/content/groups/public/</url>
-</repository>
-
-<dependency>
-    <groupId>pl.kacperduras</groupId>
-    <artifactId>protocoltab</artifactId>
-    <version>1.1.3</version>
-    <scope>provided</scope>
-</dependency>
-```
+Each player can see different tab list, and everything is limited to your imagination.
 
 ## Example
 
